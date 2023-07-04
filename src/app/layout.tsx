@@ -1,8 +1,12 @@
 import type { ReactNode } from 'react';
 import '../styles/tailwind.css';
-import { Inter } from 'next/font/google';
+import { Roboto_Flex } from 'next/font/google';
+import { Nav } from '@/components/inc/nav/Nav';
 
-const inter = Inter({ subsets: ['latin'] });
+const robotoFlex = Roboto_Flex({
+	subsets: ['latin'],
+	style: 'normal',
+});
 
 export const metadata = {
 	title: 'Create Next App',
@@ -15,8 +19,12 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
-		<html lang="pl">
-			<body className={inter.className}>{children}</body>
+		<html lang="pl" className={robotoFlex.className}>
+			<body className="bg-theme-base">
+				<Nav />
+
+				<main>{children}</main>
+			</body>
 		</html>
 	);
 }
