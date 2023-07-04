@@ -1,0 +1,32 @@
+import Image from 'next/image';
+import { Container } from '../Container';
+import { Button } from '../Button';
+
+export const Hero = () => {
+	return (
+		<header className="min-h-screen w-full">
+			<Container size="lg">
+				<div className="mt-16 flex flex-col items-center gap-3">
+					<div className="relative h-36 w-36 md:h-48 md:w-48 lg:h-56 lg:w-56">
+						<Image src="/logo412white.png" fill alt="" />
+					</div>
+
+					<div className="space-y-10 text-center">
+						<hgroup className="space-y-4 text-center">
+							<h2 className="text-3xl font-bold md:text-4xl lg:text-5xl xl:text-6xl">
+								Uczniowskie Koło Informatyczne
+							</h2>
+
+							<p className="text-sm tracking-wide md:text-base xl:text-lg">
+								Społeczność uczniów działających w branży IT, bo
+								przyszłość zaczyna się dzisiaj!
+							</p>
+						</hgroup>
+
+						<Button onClick={undefined}>Dołącz teraz</Button>
+					</div>
+				</div>
+			</Container>
+		</header>
+	);
+};

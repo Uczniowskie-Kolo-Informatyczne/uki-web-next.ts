@@ -20,10 +20,10 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="pl" className={robotoFlex.className}>
-			<body className="bg-theme-base">
+			<body className="bg-theme-base text-primary-light">
 				<Nav />
 
-				<main>{children}</main>
+				{children}
 			</body>
 		</html>
 	);

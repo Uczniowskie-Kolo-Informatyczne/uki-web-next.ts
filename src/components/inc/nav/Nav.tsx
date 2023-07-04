@@ -23,7 +23,7 @@ export const Nav = () => {
 									alt=""
 								/>
 
-								<h1 className="relative top-0.5 font-bold tracking-wide text-primary-light">
+								<h1 className="relative top-0.5 font-bold tracking-wide">
 									Uczniowskie Koło Informatyczne
 								</h1>
 							</Link>
