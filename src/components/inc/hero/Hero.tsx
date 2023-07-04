@@ -8,7 +8,13 @@ export const Hero = () => {
 			<Container size="lg">
 				<div className="mt-16 flex flex-col items-center gap-3">
 					<div className="relative h-36 w-36 md:h-48 md:w-48 lg:h-56 lg:w-56">
-						<Image src="/logo412white.png" fill alt="" />
+						<Image
+							src="/logo412white.png"
+							fill
+							sizes="(min-width: 768px) 12rem, (min-width: 1024px) 14rem"
+							priority
+							alt=""
+						/>
 					</div>
 
 					<div className="space-y-10 text-center">
