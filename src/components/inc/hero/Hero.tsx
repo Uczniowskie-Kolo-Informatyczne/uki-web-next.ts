@@ -7,7 +7,7 @@ export const Hero = () => {
 	return (
 		<header className="min-h-screen w-full">
 			<Container size="lg">
-				<div className="mt-16 flex flex-col items-center gap-3">
+				<div className="flex flex-col items-center gap-3 pt-48">
 					<div className="relative h-36 w-36 md:h-48 md:w-48 lg:h-56 lg:w-56">
 						<Image
 							src={WhiteLogo}

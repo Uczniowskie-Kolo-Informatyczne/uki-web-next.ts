@@ -8,7 +8,10 @@ import WhiteLogo from '../../../../public/logo412white.png';
 
 export const Nav = () => {
 	return (
-		<nav aria-label="Main navigation">
+		<nav
+			aria-label="Main navigation"
+			className="absolute left-0 top-0 w-full"
+		>
 			<Container size="lg">
 				<div className="mx-auto py-5 sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
 					<div className="relative flex items-center justify-between">
