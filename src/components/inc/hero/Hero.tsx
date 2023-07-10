@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Container } from '../Container';
 import { Button } from '../Button';
+import WhiteLogo from '../../../../public/logo412white.png';
 
 export const Hero = () => {
 	return (
@@ -9,7 +10,7 @@ export const Hero = () => {
 				<div className="mt-16 flex flex-col items-center gap-3">
 					<div className="relative h-36 w-36 md:h-48 md:w-48 lg:h-56 lg:w-56">
 						<Image
-							src="/logo412white.png"
+							src={WhiteLogo}
 							fill
 							sizes="(min-width: 768px) 12rem, (min-width: 1024px) 14rem"
 							priority

@@ -4,6 +4,7 @@ import links from './links.json';
 import { MobileNav } from './mobileNav/MobileNav';
 import { Container } from '../Container';
 import Image from 'next/image';
+import WhiteLogo from '../../../../public/logo412white.png';
 
 export const Nav = () => {
 	return (
@@ -17,7 +18,7 @@ export const Nav = () => {
 								className="flex items-center gap-2 rounded-md py-1 outline-offset-0 md:outline-offset-8"
 							>
 								<Image
-									src="/logo412white.png"
+									src={WhiteLogo}
 									width="50"
 									height="50"
 									alt=""
