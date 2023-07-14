@@ -28,8 +28,7 @@ export type Project = {
 };
 
 const fetchPublications = async (): Promise<Publication[]> => {
-	const data = await fetchData('https://uki.edu.pl/api/articles/');
-	return data.sort((a, b) => b.timestamp - a.timestamp);
+	return await fetchData('https://uki.edu.pl/api/articles/timestamp');
 };
 
 const fetchProjects = async () => {
