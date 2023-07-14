@@ -10,12 +10,14 @@ module.exports = {
 			colors: {
 				theme: {
 					base: '#1E2439',
+					dark: '#25262b',
 				},
 				primary: {
 					light: '#f3f4f6',
 				},
 				accent: {
-					base: '#63B4D1',
+					base: '#5c7cfa',
+					light: '#63B4D1',
 				},
 			},
 			fontFamily: {
