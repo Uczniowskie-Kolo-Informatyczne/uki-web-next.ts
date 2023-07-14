@@ -35,7 +35,7 @@ export const PublicationsSlider = ({
 			}}
 		>
 			{publications.map(
-				({ _id, description, image, link, timestamp, title }) => (
+				({ _id, description, image, timestamp, title }) => (
 					<SwiperSlide tag="li" key={_id}>
 						<article className="mx-auto w-full max-w-md rounded-lg bg-theme-dark shadow-md">
 							<div className="relative h-80 w-full">
