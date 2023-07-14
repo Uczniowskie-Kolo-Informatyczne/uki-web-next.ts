@@ -30,7 +30,9 @@ export const Hero = () => {
 							</p>
 						</hgroup>
 
-						<Button onClick={undefined}>Dołącz teraz</Button>
+						<Button onClick={undefined} variant="white" size="lg">
+							Dołącz teraz
+						</Button>
 					</div>
 				</div>
 			</Container>
