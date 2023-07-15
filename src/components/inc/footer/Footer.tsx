@@ -54,7 +54,7 @@ export const Footer = () => {
 										<li key={_i}>
 											<Link
 												href={link}
-												className="rounded-sm outline-offset-8"
+												className="rounded-sm outline-offset-8 transition-colors hover:text-primary-light/80"
 											>
 												{title}
 											</Link>
@@ -78,7 +78,7 @@ export const Footer = () => {
 								key={i}
 								href={link}
 								title={name}
-								className="rounded-sm outline-offset-4"
+								className="rounded-sm outline-offset-4 transition-opacity hover:opacity-80"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
