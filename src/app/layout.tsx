@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import '../styles/tailwind.css';
 import { Roboto_Flex } from 'next/font/google';
 import { Nav } from '@/components/inc/nav/Nav';
+import { Footer } from '@/components/inc/footer/Footer';
 
 const robotoFlex = Roboto_Flex({
 	subsets: ['latin'],
@@ -24,6 +25,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
 				<Nav />
 
 				{children}
+
+				<Footer />
 			</body>
 		</html>
 	);
