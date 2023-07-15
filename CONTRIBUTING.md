@@ -6,15 +6,15 @@ Do zgłaszania bugów, sugestii lub ewentualnych poprawek korzystamy z GitHub Is
 
 ## Stack technologiczny
 
-- TypeScript
-- Next.js
-- React Query
-- Formik
-- Tailwind
+-   TypeScript
+-   Next.js
+-   React Query
+-   Formik
+-   Tailwind
 
 ## Praca lokalna
 
-Przed przystąpieniem do pracy należy skopiować plik `.env-sample` do `.env`.
+Przed przystąpieniem do pracy należy skopiować plik `.env-sample` do `.env.local`.
 Projekt uruchamiamy jednym poleceniem `npm run dev`. Spowoduje ono instalację wszystkich potrzebnych zależności oraz uruchomienie naszej aplikacji.
 Po chwili powinna być gotowa pod adresem http://localhost:3000/
 

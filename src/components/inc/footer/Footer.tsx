@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { linksSections } from './linksSections';
 import { socialMedia } from './socialMedia';
+import { NEXT_PUBLIC_APP_NAME } from '@/utils/env';
 
 export const Footer = () => {
 	return (
@@ -23,7 +24,7 @@ export const Footer = () => {
 							href="/"
 							className="rounded-md text-xl font-bold uppercase tracking-wide text-primary-light outline-offset-8"
 						>
-							Uczniowskie Koło Informatyczne
+							{NEXT_PUBLIC_APP_NAME}
 						</Link>
 
 						<div className="mt-4 lg:max-w-sm">
@@ -68,8 +69,8 @@ export const Footer = () => {
 
 				<div className="flex flex-col justify-between border-t pb-10 pt-5 sm:flex-row">
 					<p className="text-sm text-primary-light">
-						© Copyright {new Date().getFullYear()} Uczniowskie Koło
-						Informatyczne. Wszelkie prawa zastrzeżone.
+						© Copyright {new Date().getFullYear()}{' '}
+						{NEXT_PUBLIC_APP_NAME}. Wszelkie prawa zastrzeżone.
 					</p>
 
 					<div className="mt-4 flex items-center space-x-4 sm:mt-0">

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Container } from '../Container';
 import { Button } from '../Button';
 import WhiteLogo from '../../../../public/logo412white.png';
+import { NEXT_PUBLIC_APP_NAME } from '@/utils/env';
 
 export const Hero = () => {
 	return (
@@ -21,7 +22,7 @@ export const Hero = () => {
 					<div className="space-y-10 text-center">
 						<hgroup className="space-y-4 text-center">
 							<h2 className="text-3xl font-bold md:text-4xl lg:text-5xl xl:text-6xl">
-								Uczniowskie Koło Informatyczne
+								{NEXT_PUBLIC_APP_NAME}
 							</h2>
 
 							<p className="text-sm tracking-wide md:text-base xl:text-lg">
