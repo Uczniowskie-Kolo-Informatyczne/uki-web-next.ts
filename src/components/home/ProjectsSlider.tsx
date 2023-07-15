@@ -8,6 +8,7 @@ import { truncate } from '@/utils/truncate';
 import { Button } from '../inc/Button';
 import { SliderContainer } from '../inc/slider/SliderContainer';
 import { SwiperSlide } from 'swiper/react';
+import { NEXT_PUBLIC_APP_ACRONYM } from '@/utils/env';
 
 type ProjectsSliderProps = {
 	projects: Project[];
@@ -48,8 +49,8 @@ export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 
 									{uki && (
 										<p className="mb-10 text-sm text-gray-400">
-											[Projekt realizowany pod patronatem
-											UKI]
+											[Projekt realizowany pod patronatem{' '}
+											{NEXT_PUBLIC_APP_ACRONYM}]
 										</p>
 									)}
 								</hgroup>

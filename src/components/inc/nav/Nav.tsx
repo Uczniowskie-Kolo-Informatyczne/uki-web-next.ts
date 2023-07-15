@@ -5,6 +5,7 @@ import { MobileNav } from './mobileNav/MobileNav';
 import { Container } from '../Container';
 import Image from 'next/image';
 import WhiteLogo from '../../../../public/logo412white.png';
+import { NEXT_PUBLIC_APP_NAME } from '@/utils/env';
 
 export const Nav = () => {
 	return (
@@ -28,7 +29,7 @@ export const Nav = () => {
 								/>
 
 								<h1 className="relative top-0.5 font-bold tracking-wide">
-									Uczniowskie Koło Informatyczne
+									{NEXT_PUBLIC_APP_NAME}
 								</h1>
 							</Link>
 						</div>
