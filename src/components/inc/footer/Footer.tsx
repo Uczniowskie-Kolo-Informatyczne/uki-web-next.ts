@@ -19,7 +19,7 @@ export const Footer = () => {
 			</svg>
 
 			<Container size="lg">
-				<div className="mx-auto w-full px-4 pt-12 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-none lg:px-0">
+				<div className="mx-auto w-full pt-12 sm:max-w-xl md:max-w-full lg:max-w-none lg:px-0">
 					<div className="row-gap-10 mb-8 grid gap-16 lg:grid-cols-6">
 						<div className="md:max-w-md lg:col-span-2">
 							<Link

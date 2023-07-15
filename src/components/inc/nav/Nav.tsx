@@ -14,7 +14,7 @@ export const Nav = () => {
 			className="absolute left-0 top-0 w-full"
 		>
 			<Container size="lg">
-				<div className="mx-auto w-full py-5 sm:max-w-xl md:max-w-full  lg:max-w-none">
+				<div className="mx-auto w-full py-5 sm:max-w-xl md:max-w-full lg:max-w-none">
 					<div className="relative flex items-center justify-between">
 						<div className="flex items-center">
 							<Link
