@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { Container } from '../Container';
-import { Button } from '../Button';
 import WhiteLogo from '../../../../public/logo412white.png';
 import { NEXT_PUBLIC_APP_NAME } from '@/utils/env';
+import { ButtonLink } from '../ButtonLink';
 
 export const Hero = () => {
 	return (
@@ -31,9 +31,14 @@ export const Hero = () => {
 							</p>
 						</hgroup>
 
-						<Button onClick={undefined} variant="white" size="lg">
+						<ButtonLink
+							href="https://discord.gg/phcnjDjh9E"
+							target="_blank"
+							variant="white"
+							size="lg"
+						>
 							Dołącz teraz
-						</Button>
+						</ButtonLink>
 					</div>
 				</div>
 			</Container>
