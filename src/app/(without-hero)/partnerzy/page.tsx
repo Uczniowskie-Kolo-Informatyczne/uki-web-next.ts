@@ -2,10 +2,15 @@ import { Container } from '@/components/inc/Container';
 import { SectionContainer } from '@/components/inc/SectionContainer';
 import { SectionTitle } from '@/components/inc/SectionTitle';
 import { partners } from '@/data/partners';
+import { getMetadataTitle } from '@/utils/getMetadataTitle';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default async function Partners() {
+export const metadata = {
+	title: getMetadataTitle('Partnerzy'),
+};
+
+export default async function PartnersPage() {
 	return (
 		<Container size="lg">
 			<SectionContainer>

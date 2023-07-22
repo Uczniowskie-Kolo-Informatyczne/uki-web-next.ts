@@ -6,6 +6,7 @@ import { SectionContainer } from '../../components/inc/SectionContainer';
 import { ProjectsSlider } from '@/components/home/ProjectsSlider';
 import { projects } from '../../data/projects';
 import type { StaticImageData } from 'next/image';
+import { getMetadataTitle } from '@/utils/getMetadataTitle';
 
 export type Publication = {
 	_id: number;
@@ -35,7 +36,11 @@ const fetchProjects = async () => {
 	return projects;
 };
 
-export default async function Home() {
+export const metadata = {
+	title: getMetadataTitle('UKI'),
+};
+
+export default async function HomePage() {
 	const publications = await fetchPublications();
 	const projects = await fetchProjects();
 
