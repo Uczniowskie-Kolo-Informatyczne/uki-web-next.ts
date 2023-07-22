@@ -11,7 +11,7 @@ import { SwiperSlide } from 'swiper/react';
 import { NEXT_PUBLIC_APP_ACRONYM } from '@/utils/env';
 
 type ProjectsSliderProps = {
-	projects: Project[];
+	projects: readonly Project[];
 };
 
 export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {

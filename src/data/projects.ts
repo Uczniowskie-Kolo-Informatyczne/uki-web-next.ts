@@ -37,4 +37,4 @@ export const projects = [
 		data: '16.11.2021',
 		uki: true,
 	},
-];
+] as const;

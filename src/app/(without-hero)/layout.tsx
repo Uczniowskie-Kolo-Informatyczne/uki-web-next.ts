@@ -7,5 +7,5 @@ type WithoutHeroLayoutProps = {
 export default function WithoutHeroLayout({
 	children,
 }: WithoutHeroLayoutProps) {
-	return <main>{children}</main>;
+	return <main className="mt-32">{children}</main>;
 }
