@@ -17,14 +17,14 @@ export type Publication = {
 };
 
 export type Project = {
-	id: number;
-	image: StaticImageData;
-	title: string;
-	link: string;
-	opis: string;
-	sukcesy: string[];
-	data: string;
-	uki: boolean;
+	readonly id: number;
+	readonly image: StaticImageData;
+	readonly title: string;
+	readonly link: string;
+	readonly opis: string;
+	readonly sukcesy: readonly string[];
+	readonly data: string;
+	readonly uki: boolean;
 };
 
 const fetchPublications = async (): Promise<Publication[]> => {
