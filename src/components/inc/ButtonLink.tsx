@@ -11,7 +11,10 @@ type ButtonLinkProps = {
 	variant: ButtonVariant;
 	size: ButtonSize;
 	children: ReactNode;
-} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> &
+} & Omit<
+	AnchorHTMLAttributes<HTMLAnchorElement>,
+	keyof LinkProps | 'className'
+> &
 	LinkProps;
 
 export const ButtonLink = ({
