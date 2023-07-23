@@ -13,7 +13,11 @@ type ButtonProps = {
 	children: ReactNode;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const getButtonStyles = (variant: ButtonVariant, size: ButtonSize) => {
+export const getButtonStyles = (
+	variant: ButtonVariant,
+	size: ButtonSize,
+	disabled: boolean
+) => {
 	return clsx(
 		'rounded-md border-[1px] font-medium tracking-wide transition-colors duration-[400ms] focus-visible:outline-offset-[6px]',
 		{
@@ -26,6 +30,9 @@ export const getButtonStyles = (variant: ButtonVariant, size: ButtonSize) => {
 		{
 			'px-5 py-2.5 md:px-7 md:py-3 md:text-xl': size === 'lg',
 			'px-4 py-2 text-sm': size === 'base',
+		},
+		{
+			'cursor-not-allowed opacity-80': disabled,
 		}
 	);
 };
@@ -36,13 +43,15 @@ export const Button = ({
 	size,
 	onClick = undefined,
 	children,
+	disabled,
 	...rest
 }: ButtonProps) => {
 	return (
 		<button
 			{...rest}
+			disabled={disabled}
 			aria-label={label}
-			className={getButtonStyles(variant, size)}
+			className={getButtonStyles(variant, size, Boolean(disabled))}
 			onClick={onClick}
 		>
 			{children}

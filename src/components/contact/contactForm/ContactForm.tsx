@@ -17,10 +17,26 @@ export const ContactForm = () => {
 		resolver: zodResolver(contactFormSchema),
 	});
 
-	const { submit } = useContactForm();
+	const { submit, isLoading, isSuccess, isError } = useContactForm();
 
 	return (
 		<div className="mx-auto max-w-4xl">
+			{isSuccess && (
+				<div className="mb-12 rounded-lg bg-black/20 p-5">
+					<span className="font-medium tracking-wide text-green-500">
+						Wiadomość została wysłana
+					</span>
+				</div>
+			)}
+
+			{isError && (
+				<div className="mb-5 rounded-lg bg-black/20 p-5">
+					<span className="font-medium tracking-wide text-red-400">
+						Coś poszło nie tak, wiadomość nie została wysłana
+					</span>
+				</div>
+			)}
+
 			<form onSubmit={handleSubmit(submit)}>
 				<div className="flex flex-col gap-7">
 					<div className="flex flex-col text-gray-300">
@@ -94,7 +110,12 @@ export const ContactForm = () => {
 						)}
 					</div>
 
-					<Button type="submit" size="lg" variant="blue-fill">
+					<Button
+						type="submit"
+						size="lg"
+						variant="blue-fill"
+						disabled={isLoading}
+					>
 						Wyślij
 					</Button>
 				</div>
