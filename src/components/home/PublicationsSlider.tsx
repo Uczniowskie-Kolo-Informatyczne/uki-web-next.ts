@@ -2,13 +2,13 @@
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import type { Publication } from '@/app/(with-hero)/page';
 import Image from 'next/image';
 import { formatTimestamp } from '@/utils/formatTimestamp';
 import { truncate } from '@/utils/truncate';
 import { Button } from '../inc/Button';
 import { SliderContainer } from '../inc/slider/SliderContainer';
 import { SwiperSlide } from 'swiper/react';
+import type { Publication } from '@/utils/schemas/publicationsSchema';
 
 type PublicationsSliderProps = {
 	publications: Publication[];

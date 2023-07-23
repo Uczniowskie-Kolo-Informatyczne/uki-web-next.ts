@@ -7,15 +7,7 @@ import { ProjectsSlider } from '@/components/home/ProjectsSlider';
 import { projects } from '../../data/projects';
 import type { StaticImageData } from 'next/image';
 import { getMetadataTitle } from '@/utils/getMetadataTitle';
-
-export type Publication = {
-	_id: number;
-	timestamp: string;
-	title: string;
-	description: string;
-	link: string;
-	image: string;
-};
+import { publicationsSchema } from '@/utils/schemas/publicationsSchema';
 
 export type Project = {
 	readonly id: number;
@@ -28,11 +20,16 @@ export type Project = {
 	readonly uki: boolean;
 };
 
-const fetchPublications = async (): Promise<Publication[]> => {
-	return await fetchData('https://uki.edu.pl/api/articles/timestamp');
+const fetchPublications = async () => {
+	const publications = await fetchData(
+		'https://uki.edu.pl/api/articles/timestamp'
+	);
+
+	return publicationsSchema.parse(publications);
 };
 
-const fetchProjects = async () => {
+const fetchProjects = () => {
+	// https://github.com/Uczniowskie-Kolo-Informatyczne/uki-web-next.ts/issues/13
 	return projects;
 };
 
@@ -42,7 +39,7 @@ export const metadata = {
 
 export default async function HomePage() {
 	const publications = await fetchPublications();
-	const projects = await fetchProjects();
+	const projects = fetchProjects();
 
 	return (
 		<Container size="lg">

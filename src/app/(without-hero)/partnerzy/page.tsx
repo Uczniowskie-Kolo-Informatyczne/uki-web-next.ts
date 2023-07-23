@@ -1,7 +1,7 @@
 import { Container } from '@/components/inc/Container';
 import { SectionContainer } from '@/components/inc/SectionContainer';
 import { SectionTitle } from '@/components/inc/SectionTitle';
-import { partners } from '@/data/partners';
+import { partners as partnersData } from '@/data/partners';
 import { getMetadataTitle } from '@/utils/getMetadataTitle';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,7 +10,14 @@ export const metadata = {
 	title: getMetadataTitle('Partnerzy'),
 };
 
+const fetchPartners = () => {
+	// https://github.com/Uczniowskie-Kolo-Informatyczne/uki-web-next.ts/issues/13
+	return partnersData;
+};
+
 export default async function PartnersPage() {
+	const partners = fetchPartners();
+
 	return (
 		<Container size="lg">
 			<SectionContainer>
