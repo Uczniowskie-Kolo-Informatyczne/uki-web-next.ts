@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import type { ReactNode } from 'react';
 
-export type ButtonVariant = 'white' | 'blue';
+export type ButtonVariant = 'white' | 'blue' | 'blue-fill';
 export type ButtonSize = 'lg' | 'base';
 
 type ButtonProps = {
@@ -21,6 +21,8 @@ export const getButtonStyles = (variant: ButtonVariant, size: ButtonSize) => {
 			'border-accent-blue lg:hover:bg-primary-light lg:hover:text-theme-base':
 				variant === 'white',
 			'border-accent-base lg:hover:bg-accent-base': variant === 'blue',
+			'border-accent-base bg-accent-base lg:hover:bg-transparent':
+				variant === 'blue-fill',
 		},
 		{
 			'px-5 py-2.5 md:px-7 md:py-3 md:text-xl': size === 'lg',
