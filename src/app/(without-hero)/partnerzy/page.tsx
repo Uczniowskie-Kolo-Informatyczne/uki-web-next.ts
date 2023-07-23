@@ -37,7 +37,7 @@ export default async function PartnersPage() {
 												src={image}
 												alt=""
 												fill
-												className="object-cover"
+												className="aspect-square"
 											/>
 										</div>
 
