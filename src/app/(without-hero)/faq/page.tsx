@@ -35,15 +35,15 @@ export default async function FaqPage() {
 							<div className="flex flex-col gap-4">
 								{questions.map(({ id, question, answer }) => (
 									<AccordionItem id={String(id)} key={id}>
-										<div className="rounded-lg bg-black/10 p-5">
-											<AccordionHeader>
-												<div className="text-left font-medium lg:text-lg">
+										<div className="rounded-lg bg-black/10">
+											<AccordionHeader rounded="lg">
+												<div className="h-full w-full p-5 text-left font-medium lg:text-lg">
 													{question}
 												</div>
 											</AccordionHeader>
 
 											<AccordionContent>
-												<div className="mt-4 tracking-wide text-gray-300">
+												<div className="bg-black/[.1] p-5 tracking-wide text-gray-300">
 													{answer}
 												</div>
 											</AccordionContent>
