@@ -9,10 +9,6 @@
 	},
 	{
 		"label": "Kontakt",
-		"link": "/"
-	},
-	{
-		"label": "Statut",
-		"link": "/"
+		"link": "/kontakt"
 	}
 ]
