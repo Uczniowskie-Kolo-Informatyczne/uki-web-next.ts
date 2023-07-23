@@ -10,6 +10,7 @@ type ButtonLinkProps = {
 	label?: string;
 	variant: ButtonVariant;
 	size: ButtonSize;
+	disabled?: boolean;
 	children: ReactNode;
 } & Omit<
 	AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -22,13 +23,18 @@ export const ButtonLink = ({
 	variant,
 	size,
 	children,
+	disabled = false,
 	...rest
 }: ButtonLinkProps) => {
 	return (
 		<Link
 			{...rest}
+			aria-disabled={disabled}
 			aria-label={label}
-			className={clsx(getButtonStyles(variant, size), 'inline-block')}
+			className={clsx(
+				getButtonStyles(variant, size, disabled),
+				'inline-block'
+			)}
 		>
 			{children}
 		</Link>
