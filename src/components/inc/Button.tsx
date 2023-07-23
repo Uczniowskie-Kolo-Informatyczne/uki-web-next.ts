@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import type { ReactNode } from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
 export type ButtonVariant = 'white' | 'blue' | 'blue-fill';
 export type ButtonSize = 'lg' | 'base';
@@ -10,9 +10,8 @@ type ButtonProps = {
 	label?: string;
 	variant: ButtonVariant;
 	size: ButtonSize;
-	onClick?: () => void;
 	children: ReactNode;
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const getButtonStyles = (variant: ButtonVariant, size: ButtonSize) => {
 	return clsx(
@@ -37,9 +36,11 @@ export const Button = ({
 	size,
 	onClick = undefined,
 	children,
+	...rest
 }: ButtonProps) => {
 	return (
 		<button
+			{...rest}
 			aria-label={label}
 			className={getButtonStyles(variant, size)}
 			onClick={onClick}

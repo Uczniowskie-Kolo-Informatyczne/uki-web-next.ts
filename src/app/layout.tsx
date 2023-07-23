@@ -4,6 +4,7 @@ import { Roboto_Flex } from 'next/font/google';
 import { Nav } from '@/components/inc/nav/Nav';
 import { Footer } from '@/components/inc/footer/Footer';
 import { getMetadataTitle } from '@/utils/getMetadataTitle';
+import { Providers } from '@/components/inc/Providers';
 
 const robotoFlex = Roboto_Flex({
 	subsets: ['latin'],
@@ -24,7 +25,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 			<body className="bg-theme-base text-primary-light">
 				<Nav />
 
-				{children}
+				<Providers>{children}</Providers>
 
 				<Footer />
 			</body>
