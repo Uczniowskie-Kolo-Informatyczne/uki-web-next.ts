@@ -1,41 +1,35 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
-import { useContactForm } from './useContactForm';
+import { useSubmitContactForm } from './useSubmitContactForm';
 import { Button } from '@/components/inc/Button';
-import { zodResolver } from '@hookform/resolvers/zod';
-import type { ContactFormValues } from '@/utils/schemas/contactFormSchema';
-import { contactFormSchema } from '@/utils/schemas/contactFormSchema';
 import { ErrorMessage } from './ErrorMessage';
+import { useContactForm } from './useContactForm';
 
 export const ContactForm = () => {
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm<ContactFormValues>({
-		resolver: zodResolver(contactFormSchema),
-	});
-
-	const { submit, isLoading, isSuccess, isError } = useContactForm();
+	const { register, handleSubmit, errors } = useContactForm();
+	const { submit, isLoading, isSuccess, isError } = useSubmitContactForm();
 
 	return (
 		<div className="mx-auto max-w-4xl">
-			{isSuccess && (
-				<div className="mb-12 rounded-lg bg-black/20 p-5">
-					<span className="font-medium tracking-wide text-green-500">
-						Wiadomość została wysłana
-					</span>
-				</div>
-			)}
+			<div role="status">
+				{isSuccess && (
+					<div className="mb-12 rounded-lg bg-black/20 p-5">
+						<span className="font-medium tracking-wide text-green-500">
+							Wiadomość została wysłana
+						</span>
+					</div>
+				)}
+			</div>
 
-			{isError && (
-				<div className="mb-5 rounded-lg bg-black/20 p-5">
-					<span className="font-medium tracking-wide text-red-400">
-						Coś poszło nie tak, wiadomość nie została wysłana
-					</span>
-				</div>
-			)}
+			<div role="alert">
+				{isError && (
+					<div className="mb-5 rounded-lg bg-black/20 p-5">
+						<span className="font-medium tracking-wide text-red-400">
+							Coś poszło nie tak, wiadomość nie została wysłana
+						</span>
+					</div>
+				)}
+			</div>
 
 			<form onSubmit={handleSubmit(submit)}>
 				<div className="flex flex-col gap-7">
@@ -47,11 +41,18 @@ export const ContactForm = () => {
 						<input
 							id="input-name"
 							className="rounded-lg bg-black/20 px-4 py-3 shadow-md focus-visible:outline-offset-[4px]"
+							autoComplete="name"
+							aria-invalid={Boolean(errors.name)}
+							aria-describedby="input-name-error-message"
+							required
 							{...register('name')}
 						/>
 
 						{errors.name && (
-							<ErrorMessage message={errors.name.message} />
+							<ErrorMessage
+								message={errors.name.message}
+								errorId="input-name-error-message"
+							/>
 						)}
 					</div>
 
@@ -63,11 +64,18 @@ export const ContactForm = () => {
 						<input
 							id="input-email"
 							className="rounded-lg bg-black/20 px-4 py-3 shadow-md outline-none focus-visible:!outline-offset-[4px]"
+							autoComplete="email"
+							aria-invalid={Boolean(errors.email)}
+							aria-describedby="input-email-error-message"
+							required
 							{...register('email')}
 						/>
 
 						{errors.email && (
-							<ErrorMessage message={errors.email.message} />
+							<ErrorMessage
+								message={errors.email.message}
+								errorId="input-email-error-message"
+							/>
 						)}
 					</div>
 
@@ -80,10 +88,17 @@ export const ContactForm = () => {
 							{...register('message')}
 							className="rounded-lg bg-black/20 px-4 py-3 shadow-md focus-visible:outline-offset-[4px]"
 							id="input-message"
+							autoComplete="off"
+							aria-invalid={Boolean(errors.message)}
+							aria-describedby="input-message-error-message"
+							required
 						></textarea>
 
 						{errors.message && (
-							<ErrorMessage message={errors.message.message} />
+							<ErrorMessage
+								message={errors.message.message}
+								errorId="input-message-error-message"
+							/>
 						)}
 					</div>
 
@@ -92,6 +107,9 @@ export const ContactForm = () => {
 							<input
 								type="checkbox"
 								id="input-termsOfService"
+								aria-invalid={Boolean(errors.termsOfService)}
+								aria-describedby="input-termsOfService-error-message"
+								required
 								{...register('termsOfService')}
 							/>
 
@@ -106,18 +124,21 @@ export const ContactForm = () => {
 						{errors.termsOfService && (
 							<ErrorMessage
 								message={errors.termsOfService.message}
+								errorId="input-termsOfService-error-message"
 							/>
 						)}
 					</div>
 
-					<Button
-						type="submit"
-						size="lg"
-						variant="blue-fill"
-						disabled={isLoading}
-					>
-						Wyślij
-					</Button>
+					<div className="mt-12 w-full">
+						<Button
+							type="submit"
+							size="lg"
+							variant="blue"
+							disabled={isLoading}
+						>
+							Wyślij
+						</Button>
+					</div>
 				</div>
 			</form>
 		</div>
