@@ -31,14 +31,16 @@ export const Hero = () => {
 							</p>
 						</hgroup>
 
-						<ButtonLink
-							href="https://discord.gg/phcnjDjh9E"
-							target="_blank"
-							variant="white"
-							size="lg"
-						>
-							Dołącz teraz
-						</ButtonLink>
+						<div className="mx-auto w-56 md:w-72">
+							<ButtonLink
+								href="https://discord.gg/phcnjDjh9E"
+								target="_blank"
+								variant="white"
+								size="lg"
+							>
+								Dołącz teraz
+							</ButtonLink>
+						</div>
 					</div>
 				</div>
 			</Container>
