@@ -37,6 +37,9 @@ export const ContactForm = () => {
 						<input
 							id="input-name"
 							className="rounded-lg bg-black/20 px-4 py-3 shadow-md focus-visible:outline-offset-[4px]"
+							autoComplete="name"
+							aria-invalid={Boolean(errors.name)}
+							required
 							{...register('name')}
 						/>
 
@@ -53,6 +56,9 @@ export const ContactForm = () => {
 						<input
 							id="input-email"
 							className="rounded-lg bg-black/20 px-4 py-3 shadow-md outline-none focus-visible:!outline-offset-[4px]"
+							autoComplete="email"
+							aria-invalid={Boolean(errors.email)}
+							required
 							{...register('email')}
 						/>
 
@@ -70,6 +76,9 @@ export const ContactForm = () => {
 							{...register('message')}
 							className="rounded-lg bg-black/20 px-4 py-3 shadow-md focus-visible:outline-offset-[4px]"
 							id="input-message"
+							autoComplete="off"
+							aria-invalid={Boolean(errors.message)}
+							required
 						></textarea>
 
 						{errors.message && (
@@ -82,6 +91,8 @@ export const ContactForm = () => {
 							<input
 								type="checkbox"
 								id="input-termsOfService"
+								aria-invalid={Boolean(errors.termsOfService)}
+								required
 								{...register('termsOfService')}
 							/>
 
