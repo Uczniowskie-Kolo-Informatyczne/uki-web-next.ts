@@ -8,6 +8,9 @@ import type { StaticImageData } from 'next/image';
 import { getMetadataTitle } from '@/utils/getMetadataTitle';
 import { publicationsSchema } from '@/utils/schemas/publicationsSchema';
 import { fetchData } from '@/utils/axios';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import '../../styles/swiper.css';
 
 export type Project = {
 	readonly id: number;

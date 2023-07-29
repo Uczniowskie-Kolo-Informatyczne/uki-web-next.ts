@@ -11,10 +11,10 @@ export const ArrowLeft = () => {
 			<path
 				d="M42.4436 85.3525L10.2915 53.2005C6.49436 49.4034 6.49436 43.1899 10.2915 39.3928L42.4436 7.24072"
 				stroke="currentColor"
-				stroke-width="14.3981"
-				stroke-miterlimit="10"
-				stroke-linecap="round"
-				stroke-linejoin="round"
+				strokeWidth="14.3981"
+				strokeMiterlimit="10"
+				strokeLinecap="round"
+				strokeLinejoin="round"
 			/>
 		</svg>
 	);

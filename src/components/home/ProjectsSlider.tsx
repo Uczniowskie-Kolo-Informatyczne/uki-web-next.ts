@@ -1,14 +1,12 @@
 'use client';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
 import type { Project } from '@/app/(with-hero)/page';
 import Image from 'next/image';
 import { truncate } from '@/utils/truncate';
 import { Button } from '../inc/Button';
 import { SliderContainer } from '../inc/slider/SliderContainer';
-import { SwiperSlide } from 'swiper/react';
 import { NEXT_PUBLIC_APP_ACRONYM } from '@/utils/env';
+import { SliderSlide } from '../inc/slider/SliderSlide';
 
 type ProjectsSliderProps = {
 	projects: readonly Project[];
@@ -30,12 +28,7 @@ export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 			}}
 		>
 			{projects.map(({ id, opis, image, data, sukcesy, uki, title }) => (
-				<SwiperSlide
-					key={id}
-					role="group"
-					aria-roledescription="slide"
-					aria-labelledby={`projects-slide-title-${id}`}
-				>
+				<SliderSlide labelledBy={`projects-slide-title-${id}`} key={id}>
 					<article className="mx-auto flex min-h-[720px] w-full max-w-2xl flex-col justify-between rounded-lg bg-theme-dark shadow-md">
 						<div>
 							<div className="relative h-36 w-full sm:h-64 md:h-80">
@@ -114,7 +107,7 @@ export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 							</div>
 						</footer>
 					</article>
-				</SwiperSlide>
+				</SliderSlide>
 			))}
 		</SliderContainer>
 	);
