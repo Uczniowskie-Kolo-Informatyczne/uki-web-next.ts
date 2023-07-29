@@ -9,7 +9,7 @@ Do zgłaszania bugów, sugestii lub ewentualnych poprawek korzystamy z GitHub Is
 -   TypeScript
 -   Next.js
 -   React Query
--   Formik
+-   React Hook Form
 -   Tailwind
 
 ## Praca lokalna
