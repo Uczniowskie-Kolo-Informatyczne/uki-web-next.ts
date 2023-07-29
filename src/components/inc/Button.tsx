@@ -19,7 +19,7 @@ export const getButtonStyles = (
 	disabled: boolean
 ) => {
 	return clsx(
-		'rounded-md border-[1px] font-medium tracking-wide transition-colors duration-[400ms] focus-visible:outline-offset-[6px]',
+		'w-full rounded-md border-[1px] font-medium tracking-wide transition-colors duration-[400ms] focus-visible:outline-offset-[6px]',
 		{
 			'border-accent-blue lg:hover:bg-primary-light lg:hover:text-theme-base':
 				variant === 'white',

@@ -125,14 +125,16 @@ export const ContactForm = () => {
 						)}
 					</div>
 
-					<Button
-						type="submit"
-						size="lg"
-						variant="blue-fill"
-						disabled={isLoading}
-					>
-						Wyślij
-					</Button>
+					<div className="mt-12 w-full">
+						<Button
+							type="submit"
+							size="lg"
+							variant="blue"
+							disabled={isLoading}
+						>
+							Wyślij
+						</Button>
+					</div>
 				</div>
 			</form>
 		</div>
