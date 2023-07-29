@@ -1,14 +1,12 @@
 'use client';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
 import type { Project } from '@/app/(with-hero)/page';
 import Image from 'next/image';
 import { truncate } from '@/utils/truncate';
 import { Button } from '../inc/Button';
 import { SliderContainer } from '../inc/slider/SliderContainer';
-import { SwiperSlide } from 'swiper/react';
 import { NEXT_PUBLIC_APP_ACRONYM } from '@/utils/env';
+import { SliderSlide } from '../inc/slider/SliderSlide';
 
 type ProjectsSliderProps = {
 	projects: readonly Project[];
@@ -17,6 +15,7 @@ type ProjectsSliderProps = {
 export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 	return (
 		<SliderContainer
+			labelledBy="projects-section-title"
 			breakpoints={{
 				1024: {
 					slidesPerView: 2,
@@ -29,7 +28,7 @@ export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 			}}
 		>
 			{projects.map(({ id, opis, image, data, sukcesy, uki, title }) => (
-				<SwiperSlide tag="li" key={id}>
+				<SliderSlide labelledBy={`projects-slide-title-${id}`} key={id}>
 					<article className="mx-auto flex min-h-[720px] w-full max-w-2xl flex-col justify-between rounded-lg bg-theme-dark shadow-md">
 						<div>
 							<div className="relative h-36 w-full sm:h-64 md:h-80">
@@ -44,7 +43,10 @@ export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 							<div className="space-y-5 p-5">
 								<header>
 									<hgroup className="w-full space-y-0.5 text-left">
-										<h4 className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-lg font-medium">
+										<h4
+											id={`projects-slide-title-${id}`}
+											className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-lg font-medium"
+										>
 											{title}
 										</h4>
 
@@ -97,7 +99,7 @@ export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 							<div>
 								<Button
 									label="Odwiedź stronę"
-									variant="blue-fill"
+									variant="blue"
 									size="base"
 								>
 									Odwiedź stronę
@@ -105,7 +107,7 @@ export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 							</div>
 						</footer>
 					</article>
-				</SwiperSlide>
+				</SliderSlide>
 			))}
 		</SliderContainer>
 	);

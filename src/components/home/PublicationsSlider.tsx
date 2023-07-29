@@ -1,14 +1,12 @@
 'use client';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
 import Image from 'next/image';
 import { formatTimestamp } from '@/utils/formatTimestamp';
 import { truncate } from '@/utils/truncate';
 import { Button } from '../inc/Button';
 import { SliderContainer } from '../inc/slider/SliderContainer';
-import { SwiperSlide } from 'swiper/react';
 import type { Publication } from '@/utils/schemas/publicationsSchema';
+import { SliderSlide } from '../inc/slider/SliderSlide';
 
 type PublicationsSliderProps = {
 	publications: Publication[];
@@ -19,6 +17,7 @@ export const PublicationsSlider = ({
 }: PublicationsSliderProps) => {
 	return (
 		<SliderContainer
+			labelledBy="publications-section-title"
 			breakpoints={{
 				640: {
 					slidesPerView: 2,
@@ -36,7 +35,10 @@ export const PublicationsSlider = ({
 		>
 			{publications.map(
 				({ _id, description, image, timestamp, title }) => (
-					<SwiperSlide tag="li" key={_id}>
+					<SliderSlide
+						key={_id}
+						labelledBy={`publications-slide-title-${_id}`}
+					>
 						<article className="mx-auto w-full max-w-md rounded-lg bg-theme-dark shadow-md">
 							<div className="relative h-80 w-full">
 								<Image
@@ -50,7 +52,10 @@ export const PublicationsSlider = ({
 							<div className="space-y-5 p-5">
 								<header>
 									<hgroup className="w-full space-y-0.5 text-left">
-										<h4 className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-lg font-medium">
+										<h4
+											id={`publications-slide-title-${_id}`}
+											className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-lg font-medium"
+										>
 											{title}
 										</h4>
 
@@ -79,7 +84,7 @@ export const PublicationsSlider = ({
 								</div>
 							</footer>
 						</article>
-					</SwiperSlide>
+					</SliderSlide>
 				)
 			)}
 		</SliderContainer>
