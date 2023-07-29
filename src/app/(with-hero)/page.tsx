@@ -1,13 +1,13 @@
 import { PublicationsSlider } from '@/components/home/PublicationsSlider';
 import { Container } from '@/components/inc/Container';
 import { SectionTitle } from '@/components/inc/SectionTitle';
-import { fetchData } from '@/utils/fetchData';
 import { SectionContainer } from '../../components/inc/SectionContainer';
 import { ProjectsSlider } from '@/components/home/ProjectsSlider';
 import { projects } from '../../data/projects';
 import type { StaticImageData } from 'next/image';
 import { getMetadataTitle } from '@/utils/getMetadataTitle';
 import { publicationsSchema } from '@/utils/schemas/publicationsSchema';
+import { fetchData } from '@/utils/axios';
 
 export type Project = {
 	readonly id: number;
@@ -21,9 +21,7 @@ export type Project = {
 };
 
 const fetchPublications = async () => {
-	const publications = await fetchData(
-		'https://uki.edu.pl/api/articles/timestamp'
-	);
+	const publications = await fetchData('api/articles/timestamp');
 
 	return publicationsSchema.parse(publications);
 };
