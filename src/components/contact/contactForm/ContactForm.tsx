@@ -39,12 +39,16 @@ export const ContactForm = () => {
 							className="rounded-lg bg-black/20 px-4 py-3 shadow-md focus-visible:outline-offset-[4px]"
 							autoComplete="name"
 							aria-invalid={Boolean(errors.name)}
+							aria-describedby="input-name-error-message"
 							required
 							{...register('name')}
 						/>
 
 						{errors.name && (
-							<ErrorMessage message={errors.name.message} />
+							<ErrorMessage
+								message={errors.name.message}
+								errorId="input-name-error-message"
+							/>
 						)}
 					</div>
 
@@ -58,12 +62,16 @@ export const ContactForm = () => {
 							className="rounded-lg bg-black/20 px-4 py-3 shadow-md outline-none focus-visible:!outline-offset-[4px]"
 							autoComplete="email"
 							aria-invalid={Boolean(errors.email)}
+							aria-describedby="input-email-error-message"
 							required
 							{...register('email')}
 						/>
 
 						{errors.email && (
-							<ErrorMessage message={errors.email.message} />
+							<ErrorMessage
+								message={errors.email.message}
+								errorId="input-email-error-message"
+							/>
 						)}
 					</div>
 
@@ -78,11 +86,15 @@ export const ContactForm = () => {
 							id="input-message"
 							autoComplete="off"
 							aria-invalid={Boolean(errors.message)}
+							aria-describedby="input-message-error-message"
 							required
 						></textarea>
 
 						{errors.message && (
-							<ErrorMessage message={errors.message.message} />
+							<ErrorMessage
+								message={errors.message.message}
+								errorId="input-message-error-message"
+							/>
 						)}
 					</div>
 
@@ -92,6 +104,7 @@ export const ContactForm = () => {
 								type="checkbox"
 								id="input-termsOfService"
 								aria-invalid={Boolean(errors.termsOfService)}
+								aria-describedby="input-termsOfService-error-message"
 								required
 								{...register('termsOfService')}
 							/>
@@ -107,6 +120,7 @@ export const ContactForm = () => {
 						{errors.termsOfService && (
 							<ErrorMessage
 								message={errors.termsOfService.message}
+								errorId="input-termsOfService-error-message"
 							/>
 						)}
 					</div>
