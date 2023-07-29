@@ -19,6 +19,7 @@ export const PublicationsSlider = ({
 }: PublicationsSliderProps) => {
 	return (
 		<SliderContainer
+			tag="ol"
 			breakpoints={{
 				640: {
 					slidesPerView: 2,

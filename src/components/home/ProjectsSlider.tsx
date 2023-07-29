@@ -17,6 +17,7 @@ type ProjectsSliderProps = {
 export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 	return (
 		<SliderContainer
+			tag="ol"
 			breakpoints={{
 				1024: {
 					slidesPerView: 2,
