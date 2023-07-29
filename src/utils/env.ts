@@ -18,3 +18,8 @@ export const NEXT_PUBLIC_APP_ACRONYM = parseEnvVariable(
 	process.env.NEXT_PUBLIC_APP_ACRONYM,
 	'NEXT_PUBLIC_APP_ACRONYM'
 );
+
+export const NEXT_PUBLIC_BACKEND_URL = parseEnvVariable(
+	process.env.NEXT_PUBLIC_BACKEND_URL,
+	'NEXT_PUBLIC_BACKEND_URL'
+);
