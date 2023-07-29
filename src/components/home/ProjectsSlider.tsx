@@ -17,6 +17,7 @@ type ProjectsSliderProps = {
 export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 	return (
 		<SliderContainer
+			labelledBy="projects-section-title"
 			breakpoints={{
 				1024: {
 					slidesPerView: 2,
@@ -29,7 +30,12 @@ export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 			}}
 		>
 			{projects.map(({ id, opis, image, data, sukcesy, uki, title }) => (
-				<SwiperSlide tag="li" key={id}>
+				<SwiperSlide
+					key={id}
+					role="group"
+					aria-roledescription="slide"
+					aria-labelledby={`projects-slide-title-${id}`}
+				>
 					<article className="mx-auto flex min-h-[720px] w-full max-w-2xl flex-col justify-between rounded-lg bg-theme-dark shadow-md">
 						<div>
 							<div className="relative h-36 w-full sm:h-64 md:h-80">
@@ -44,7 +50,10 @@ export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 							<div className="space-y-5 p-5">
 								<header>
 									<hgroup className="w-full space-y-0.5 text-left">
-										<h4 className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-lg font-medium">
+										<h4
+											id={`projects-slide-title-${id}`}
+											className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-lg font-medium"
+										>
 											{title}
 										</h4>
 

@@ -14,11 +14,13 @@ type SliderContainerProps = {
 		[width: number]: SwiperOptions;
 		[ratio: string]: SwiperOptions;
 	};
+	labelledBy: string;
 	children: ReactNode;
 };
 
 export const SliderContainer = ({
 	breakpoints,
+	labelledBy,
 	children,
 }: SliderContainerProps) => {
 	return (
@@ -26,6 +28,8 @@ export const SliderContainer = ({
 			spaceBetween={50}
 			slidesPerView={3}
 			tag="section"
+			aria-labelledby={labelledBy}
+			aria-roledescription="carousel"
 			navigation={{
 				prevEl: 'swiper-prev',
 				nextEl: 'swiper-next',

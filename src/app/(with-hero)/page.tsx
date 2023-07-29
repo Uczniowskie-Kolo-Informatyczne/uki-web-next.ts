@@ -42,7 +42,9 @@ export default async function HomePage() {
 	return (
 		<Container size="lg">
 			<SectionContainer>
-				<SectionTitle tag="h3">Ogłoszenia</SectionTitle>
+				<div id="publications-section-title">
+					<SectionTitle tag="h3">Ogłoszenia</SectionTitle>
+				</div>
 
 				<div>
 					<PublicationsSlider publications={publications} />
@@ -50,7 +52,9 @@ export default async function HomePage() {
 			</SectionContainer>
 
 			<SectionContainer>
-				<SectionTitle tag="h3">Projekty</SectionTitle>
+				<div id="projects-section-title">
+					<SectionTitle tag="h3">Projekty</SectionTitle>
+				</div>
 
 				<div>
 					<ProjectsSlider projects={projects} />
