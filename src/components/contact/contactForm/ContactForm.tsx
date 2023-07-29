@@ -1,23 +1,13 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
-import { useContactForm } from './useContactForm';
+import { useSubmitContactForm } from './useSubmitContactForm';
 import { Button } from '@/components/inc/Button';
-import { zodResolver } from '@hookform/resolvers/zod';
-import type { ContactFormValues } from '@/utils/schemas/contactFormSchema';
-import { contactFormSchema } from '@/utils/schemas/contactFormSchema';
 import { ErrorMessage } from './ErrorMessage';
+import { useContactForm } from './useContactForm';
 
 export const ContactForm = () => {
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm<ContactFormValues>({
-		resolver: zodResolver(contactFormSchema),
-	});
-
-	const { submit, isLoading, isSuccess, isError } = useContactForm();
+	const { register, handleSubmit, errors } = useContactForm();
+	const { submit, isLoading, isSuccess, isError } = useSubmitContactForm();
 
 	return (
 		<div className="mx-auto max-w-4xl">
