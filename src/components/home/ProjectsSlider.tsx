@@ -97,7 +97,7 @@ export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 							<div>
 								<Button
 									label="Odwiedź stronę"
-									variant="blue-fill"
+									variant="blue"
 									size="base"
 								>
 									Odwiedź stronę
