@@ -11,7 +11,7 @@ export const SlidePrevButton = () => {
 		<button
 			type="button"
 			onClick={slidePrev}
-			className={clsx(!isActive && 'hidden')}
+			className={clsx('px-4', !isActive && 'hidden')}
 		>
 			<span className="sr-only">Slide to the previous slide</span>
 

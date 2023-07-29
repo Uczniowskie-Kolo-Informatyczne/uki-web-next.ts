@@ -11,7 +11,7 @@ export const SlideNextButton = () => {
 		<button
 			type="button"
 			onClick={slideNext}
-			className={clsx(!isActive && 'hidden')}
+			className={clsx('px-4', !isActive && 'hidden')}
 		>
 			<span className="sr-only">Slide to the next slide</span>
 
