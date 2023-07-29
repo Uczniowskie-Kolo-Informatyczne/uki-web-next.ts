@@ -11,21 +11,25 @@ export const ContactForm = () => {
 
 	return (
 		<div className="mx-auto max-w-4xl">
-			{isSuccess && (
-				<div className="mb-12 rounded-lg bg-black/20 p-5">
-					<span className="font-medium tracking-wide text-green-500">
-						Wiadomość została wysłana
-					</span>
-				</div>
-			)}
+			<div role="status">
+				{isSuccess && (
+					<div className="mb-12 rounded-lg bg-black/20 p-5">
+						<span className="font-medium tracking-wide text-green-500">
+							Wiadomość została wysłana
+						</span>
+					</div>
+				)}
+			</div>
 
-			{isError && (
-				<div className="mb-5 rounded-lg bg-black/20 p-5">
-					<span className="font-medium tracking-wide text-red-400">
-						Coś poszło nie tak, wiadomość nie została wysłana
-					</span>
-				</div>
-			)}
+			<div role="alert">
+				{isError && (
+					<div className="mb-5 rounded-lg bg-black/20 p-5">
+						<span className="font-medium tracking-wide text-red-400">
+							Coś poszło nie tak, wiadomość nie została wysłana
+						</span>
+					</div>
+				)}
+			</div>
 
 			<form onSubmit={handleSubmit(submit)}>
 				<div className="flex flex-col gap-7">
