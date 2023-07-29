@@ -6,33 +6,42 @@ import type { ReactNode } from 'react';
 import { Swiper } from 'swiper/react';
 import { A11y, Autoplay, Keyboard, Navigation } from 'swiper/modules';
 import type { SwiperOptions } from 'swiper/types';
-
-type SliderContainerTag = keyof Pick<JSX.IntrinsicElements, 'ul' | 'ol'>;
+import { SlidePrevButton } from './slidePrevButton/SlidePrevButton';
+import { SlideNextButton } from './slideNextButton/SlideNextButton';
 
 type SliderContainerProps = {
 	breakpoints: {
 		[width: number]: SwiperOptions;
 		[ratio: string]: SwiperOptions;
 	};
-	tag: SliderContainerTag;
 	children: ReactNode;
 };
 
 export const SliderContainer = ({
 	breakpoints,
-	tag,
 	children,
 }: SliderContainerProps) => {
 	return (
 		<Swiper
 			spaceBetween={50}
-			slidesPerView={1}
-			tag={tag}
-			navigation={true}
+			slidesPerView={3}
+			tag="section"
+			navigation={{
+				prevEl: 'swiper-prev',
+				nextEl: 'swiper-next',
+			}}
 			modules={[A11y, Keyboard, Autoplay, Navigation]}
 			breakpoints={breakpoints}
 		>
 			{children}
+
+			<div className="swiper-prev">
+				<SlidePrevButton />
+			</div>
+
+			<div className="swiper-next">
+				<SlideNextButton />
+			</div>
 		</Swiper>
 	);
 };
