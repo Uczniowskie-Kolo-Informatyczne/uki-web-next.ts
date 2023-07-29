@@ -1,7 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss';
+
+export default {
 	content: [
-		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
@@ -21,12 +21,12 @@ module.exports = {
 				},
 			},
 			fontFamily: {
-				sans: ['var(--font-roboto-flex)'],
+				sans: ['--font-roboto-flex'],
 			},
 			maxWidth: {
-				'8xl': 1408,
+				'8xl': '1408px',
 			},
 		},
 	},
 	plugins: [],
-};
+} satisfies Config;
