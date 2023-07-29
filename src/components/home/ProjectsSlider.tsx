@@ -94,13 +94,15 @@ export const ProjectsSlider = ({ projects }: ProjectsSliderProps) => {
 						</div>
 
 						<footer className="mt-auto flex w-full justify-end pb-5 pr-5">
-							<Button
-								label="Odwiedź stronę"
-								variant="blue-fill"
-								size="base"
-							>
-								Odwiedź stronę
-							</Button>
+							<div>
+								<Button
+									label="Odwiedź stronę"
+									variant="blue-fill"
+									size="base"
+								>
+									Odwiedź stronę
+								</Button>
+							</div>
 						</footer>
 					</article>
 				</SwiperSlide>

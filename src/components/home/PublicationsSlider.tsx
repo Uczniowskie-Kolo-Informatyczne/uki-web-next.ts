@@ -68,13 +68,15 @@ export const PublicationsSlider = ({
 							</div>
 
 							<footer className="flex w-full justify-end pb-5 pr-5">
-								<Button
-									label="Czytaj dalej"
-									variant="blue"
-									size="base"
-								>
-									Czytaj dalej
-								</Button>
+								<div>
+									<Button
+										label="Czytaj dalej"
+										variant="blue"
+										size="base"
+									>
+										Czytaj dalej
+									</Button>
+								</div>
 							</footer>
 						</article>
 					</SwiperSlide>
