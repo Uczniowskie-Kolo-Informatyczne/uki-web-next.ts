@@ -26,7 +26,7 @@ export const SliderContainer = ({
 	return (
 		<Swiper
 			spaceBetween={50}
-			slidesPerView={3}
+			slidesPerView={1}
 			tag="section"
 			aria-labelledby={labelledBy}
 			aria-roledescription="carousel"
