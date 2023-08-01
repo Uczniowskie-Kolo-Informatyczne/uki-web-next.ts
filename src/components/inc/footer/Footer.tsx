@@ -57,7 +57,7 @@ export const Footer = () => {
 													<Link
 														target={target}
 														href={link}
-														className="rounded-sm outline-offset-8 transition-colors hover:text-primary-light/80"
+														className="rounded-sm outline-offset-8 transition-colors hover:text-primary-light/80 hover:underline"
 													>
 														{title}
 													</Link>
