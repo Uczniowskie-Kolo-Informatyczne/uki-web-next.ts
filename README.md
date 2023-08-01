@@ -19,12 +19,12 @@
 ## Kontrybucje
 Zachęcamy do tworzenia issues i pracy z kodem! 
 <br />
-<a href="https://github.com/Uczniowskie-Kolo-Informatyczne/uki-web-next.ts/blob/7936396570071e866f1569de20fa048dbc96df1c/CONTRIBUTING.md">CONTRIBUTING.md</a>
+<a href="https://github.com/Uczniowskie-Kolo-Informatyczne/uki-web-next.ts/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>
 
 ## API
 Oficjalne API do komunikacji z backendem UKI 
 <br />
-<a href="https://github.com/Uczniowskie-Kolo-Informatyczne/uki-web-next.ts/blob/7936396570071e866f1569de20fa048dbc96df1c/API">API.md</a>
+<a href="https://github.com/Uczniowskie-Kolo-Informatyczne/uki-web-next.ts/blob/main/API.md">API.md</a>
 
 ## Licencja
 
