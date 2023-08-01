@@ -1,0 +1,16 @@
+ol.statute-custom-style {
+	list-style-type: none;
+	counter-reset: section-counter;
+	padding-left: 1em;
+}
+
+@media screen and (min-width: 576px) {
+	ol.statute-custom-style {
+		padding-left: 2em;
+	}
+}
+
+ol.statute-custom-style > li:before {
+	counter-increment: section-counter;
+	content: '§ ' counter(section-counter) '. ';
+}
