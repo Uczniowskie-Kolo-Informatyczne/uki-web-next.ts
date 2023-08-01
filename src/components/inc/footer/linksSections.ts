@@ -1,35 +1,36 @@
 export const linksSections = [
 	{
-		title: 'Column 1',
+		title: 'Linki',
 		links: [
 			{
-				title: 'Link 1 ',
-				link: '/',
+				title: 'Faq',
+				link: '/faq',
+				target: '_self',
 			},
 			{
-				title: 'Link 2',
-				link: '/',
+				title: 'Partnerzy',
+				link: '/partnerzy',
+				target: '_self',
 			},
 			{
-				title: 'Link 3',
-				link: '/',
+				title: 'Kontakt',
+				link: '/kontakt',
+				target: '_self',
 			},
 		],
 	},
 	{
-		title: 'Column 2',
+		title: 'Dokumenty',
 		links: [
 			{
-				title: 'Link 1 ',
-				link: '/',
+				title: 'Statut',
+				link: '/files/Statut_Uczniowskiego_Koa_Informatycznego.pdf',
+				target: '_blank',
 			},
 			{
-				title: 'Link 2',
-				link: '/',
-			},
-			{
-				title: 'Link 3',
-				link: '/',
+				title: 'Polityka prywatności',
+				link: '/files/Polityka_prywatnosci_Uczniowskiego_Koa_Informatycznego.pdf',
+				target: '_blank',
 			},
 		],
 	},
@@ -39,14 +40,38 @@ export const linksSections = [
 			{
 				title: 'Link 1 ',
 				link: '/',
+				target: '_self',
 			},
 			{
 				title: 'Link 2',
 				link: '/',
+				target: '_self',
 			},
 			{
 				title: 'Link 3',
 				link: '/',
+				target: '_self',
+			},
+		],
+	},
+
+	{
+		title: 'Column 3',
+		links: [
+			{
+				title: 'Link 1 ',
+				link: '/',
+				target: '_self',
+			},
+			{
+				title: 'Link 2',
+				link: '/',
+				target: '_self',
+			},
+			{
+				title: 'Link 3',
+				link: '/',
+				target: '_self',
 			},
 		],
 	},

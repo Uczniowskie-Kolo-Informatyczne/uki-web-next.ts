@@ -21,7 +21,7 @@ export const Footer = () => {
 			<Container size="lg">
 				<div className="mx-auto w-full pt-12 sm:max-w-xl md:max-w-full lg:max-w-none lg:px-0">
 					<div className="row-gap-10 mb-8 grid gap-16 lg:grid-cols-6">
-						<div className="md:max-w-md lg:col-span-2">
+						<section className="md:max-w-md lg:col-span-2">
 							<Link
 								href="/"
 								className="rounded-md text-xl font-bold uppercase tracking-wide text-primary-light outline-offset-8"
@@ -41,35 +41,36 @@ export const Footer = () => {
 									explicabo.
 								</p>
 							</div>
-						</div>
+						</section>
 
 						<div className="row-gap-8 grid grid-cols-2 gap-5 md:grid-cols-4 lg:col-span-4">
-							<div className="hidden lg:block"></div>
-
 							{linksSections.map(({ title, links }, i) => (
-								<div key={i}>
+								<section key={i}>
 									<p className="font-semibold tracking-wide">
 										{title}
 									</p>
 
 									<ul role="list" className="mt-2 space-y-2">
-										{links.map(({ title, link }, _i) => (
-											<li key={_i}>
-												<Link
-													href={link}
-													className="rounded-sm outline-offset-8 transition-colors hover:text-primary-light/80"
-												>
-													{title}
-												</Link>
-											</li>
-										))}
+										{links.map(
+											({ title, link, target }, _i) => (
+												<li key={_i}>
+													<Link
+														target={target}
+														href={link}
+														className="rounded-sm outline-offset-8 transition-colors hover:text-primary-light/80"
+													>
+														{title}
+													</Link>
+												</li>
+											)
+										)}
 									</ul>
-								</div>
+								</section>
 							))}
 						</div>
 					</div>
 
-					<div className="flex flex-col justify-between border-t pb-10 pt-5 sm:flex-row">
+					<section className="flex flex-col justify-between border-t pb-10 pt-5 sm:flex-row">
 						<p className="text-sm text-primary-light">
 							© Copyright {new Date().getFullYear()}{' '}
 							{NEXT_PUBLIC_APP_NAME}. Wszelkie prawa zastrzeżone.
@@ -90,7 +91,7 @@ export const Footer = () => {
 								</Link>
 							))}
 						</div>
-					</div>
+					</section>
 				</div>
 			</Container>
 		</footer>
