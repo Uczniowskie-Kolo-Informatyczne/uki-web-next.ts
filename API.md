@@ -57,18 +57,34 @@ Użytkownicy posiadają role z Discorda oraz role respektowane na stronie (np. `
 | GET    | /articles/search/:phrase | --             | Articles array/null | --           | Zwraca artykuł wyszukany za pomocą :phrase |
 | POST   | /articles                | Article object | 201/Error           | `writer`     | Tworzy nowy artykuł                        |
 | PATCH  | /articles/:id            | Article object | 200/Error           | `writer`     | Edytuje istniejący artykuł                 |
-| DELETE | /articles/:id            | --             | 200/Error           | `writer`     | Usówa artykuł o :id                        |
+| DELETE | /articles/:id            | --             | 200/Error           | `writer`     | Usuwa artykuł o :id                        |
 
 ## Przekierowania
 
-*Przekierowania zostaną zmodyfikowane i opisane gdzie indziej, dlatego ta tabela wkrótce zniknie.
+| METHOD | URL            | BODY           | RESPONSE             | AUTH (rola?) | Opis                               |
+|--------|----------------|----------------|----------------------|--------------|------------------------------------|
+| GET    | /redirects     | --             | Redirect array/null  | --           | Zwraca wszystkie przekierowania    |
+| GET    | /redirects/:id | --             | Redirect object/null | --           | Zwraca przekierowanie o podanym id |
+| POST   | /redirects     | Redirect object| 201/Error            | writer       | Tworzy nowe przekierowanie         |
+| DELETE | /redirects/:id | --             | 200/Error            | writer       | Usuwa przekierowanie o :id         |
 
-| METHOD | URL            | BODY           | RESPONSE            | AUTH (rola?) | Opis                               |
-|--------|----------------|----------------|---------------------|--------------|------------------------------------|
-| GET    | /redirects     | --             | Articles array/null | --           | Zwraca wszystkie przekierowania    |
-| GET    | /redirects/:id | --             | Article object/null | --           | Zwraca przekierowanie o podanym id |
-| POST   | /redirects     | Article object | 201/Error           | writer       | Tworzy nowe przekierowanie         |
-| DELETE | /redirects/:id | --             | 200/Error           | writer       | Usuwa przekierowanie o :id         |
+## Pytania
+
+| METHOD | URL            | BODY           | RESPONSE             | AUTH (rola?) | Opis                               |
+|--------|----------------|----------------|----------------------|--------------|------------------------------------|
+| GET    | /questions     | --             | Question array/null  | --           | Zwraca wszystkie pytania           |
+| GET    | /questions/:id | --             | Question object/null | --           | Zwraca pytanie o podanym id        |
+| POST   | /questions     | Question object| 201/Error            | admin        | Tworzy nowe pytanie                |
+| DELETE | /questions/:id | --             | 200/Error            | admin        | Usuwa pytanie o :id                |
+
+## Partnerzy
+
+| METHOD | URL            | BODY           | RESPONSE             | AUTH (rola?) | Opis                               |
+|--------|----------------|----------------|----------------------|--------------|------------------------------------|
+| GET    | /partners      | --             | Partner array/null   | --           | Zwraca wszystkich partnerów        |
+| GET    | /partners/:id  | --             | Partner object/null  | --           | Zwraca partnera o podanym id       |
+| POST   | /partners      | Partner object | 201/Error            | admin        | Tworzy nowego partnera             |
+| DELETE | /partners/:id  | --             | 200/Error            | admin        | Usuwa partnera o :id               |
 
 ## Pliki
 
