@@ -77,15 +77,6 @@ Użytkownicy posiadają role z Discorda oraz role respektowane na stronie (np. `
 | POST   | /questions     | Question object| 201/Error            | admin        | Tworzy nowe pytanie                |
 | DELETE | /questions/:id | --             | 200/Error            | admin        | Usuwa pytanie o :id                |
 
-## Pytania
-
-| METHOD | URL            | BODY           | RESPONSE             | AUTH (rola?) | Opis                               |
-|--------|----------------|----------------|----------------------|--------------|------------------------------------|
-| GET    | /questions     | --             | Question array/null  | --           | Zwraca wszystkie pytania           |
-| GET    | /questions/:id | --             | Question object/null | --           | Zwraca pytanie o podanym id        |
-| POST   | /questions     | Question object| 201/Error            | admin        | Tworzy nowe pytanie                |
-| DELETE | /questions/:id | --             | 200/Error            | admin        | Usuwa pytanie o :id                |
-
 ## Partnerzy
 
 | METHOD | URL            | BODY           | RESPONSE             | AUTH (rola?) | Opis                               |
